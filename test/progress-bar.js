@@ -17,7 +17,7 @@ describe("Progress bars", function() {
     });
     it("should generate a warning progress bar",function() {
         var fn = pug.compileFile(path.join(__dirname,"fixtures/progress-bar","progress-bar-warning.pug"));
-        assert.equal('<div class="progress-bar progress-bar-warning" class="progress"><div role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete</span></div></div>',fn({value: 60 }));
+        assert.equal('<div class="progress"><div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%"><span class="sr-only">60% Complete</span></div></div>',fn({value: 60 }));
     });
     it("should generate a danger progress bar",function() {
         var fn = pug.compileFile(path.join(__dirname,"fixtures/progress-bar","progress-bar-danger.pug"));
