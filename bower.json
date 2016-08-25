@@ -1,12 +1,12 @@
 {
   "name": "pug-bootstrap",
   "version": "0.0.1",
-  "homepage": "https://github.com/mike-goodwin/pug-bootstrap",
+  "homepage": "https://github.com/Sa-Lat/pug-bootstrap",
   "authors": [
-    "mike.goodwin@owasp.org"
+    "sascha.latzkowski@gmail.com"
   ],
-  "description": "Bootstrap framework written completely using mixins in pug - forked from JADE-Bootstrap",
-  "main": "bootstrap.pug",
+  "description": "Bootstrap framework written completely using mixins in pug - forked from Pug-Bootstrap",
+  "main": "_bootstrap.pug",
   "keywords": [
     "pug",
     "bootstrap",
