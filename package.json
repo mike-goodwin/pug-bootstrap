@@ -1,5 +1,5 @@
 {
-  "name": "pug-bootstrap",
+  "name": "salat-pug-bootstrap",
   "version": "0.0.1",
   "description": "Bootstrap framework written completely using mixins in pug",
   "main": "bootstrap.pug",
