@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/mike-goodwin/pug-bootstrap.git"
+    "url": "https://github.com/Sa-Lat/pug-bootstrap.git"
   },
   "keywords": [
     "pug",
@@ -20,12 +20,12 @@
     "framework",
     "mixins"
   ],
-  "author": "Mike Goodwin",
+  "author": "Sascha Latzkowski",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mike-goodwin/pug-bootstrap/issues"
+    "url": "https://github.com/Sa-Lat/pug-bootstrap/issues"
   },
-  "homepage": "https://github.com/mike-goodwin/pug-bootstrap",
+  "homepage": "https://github.com/Sa-Lat/pug-bootstrap",
   "devDependencies": {
     "jasmine": "^2.4.1",
     "mocha": "^2.3.4"
