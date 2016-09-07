@@ -112,7 +112,7 @@ mixin btn-xs-danger(caption)
 //- input buttons
 mixin input-btn(caption,style)
 	- var type = (typeof style === 'undefined') ? "default" : style
-	input.btn(class="btn-#{type}",type="button",value="#{caption}")
+	input.btn(class="btn-"+ type,type="button",value=caption)
 
 mixin input-btn-primary(caption)
 	+input-btn(caption,"primary")
@@ -132,7 +132,7 @@ mixin input-btn-success(caption)
 //- submit buttons
 mixin submit(caption,style)
 	- var type = (typeof style === 'undefined') ? "default" : style
-	input.btn(class="btn-#{type}",type="submit",value="#{caption}")
+	input.btn(class="btn-" + type,type="submit",value=caption)
 
 mixin submit-primary(caption)
 	+submit(caption,"primary")
