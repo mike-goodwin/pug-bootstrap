@@ -7,7 +7,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Launch Program",
+            "name": "Run Tests",
             "program": "${workspaceRoot}\\node_modules\\mocha\\bin\\_mocha",
             "runtimeExecutable": null,
             "cwd": "${workspaceRoot}",
