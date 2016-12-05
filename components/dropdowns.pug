@@ -9,7 +9,7 @@ mixin dropdown(caption,items)
 			- var args = Array.prototype.slice.call(arguments);
 			for item in args[1]
 				li(role="presentation")
-					a(role="menuitem",tabindex="-1",href="#{item.url}")= item.text
+					a(role="menuitem",tabindex="-1",href=item.url)= item.text
 
 //- Dropup
 mixin dropup(caption,items)
@@ -22,4 +22,4 @@ mixin dropup(caption,items)
 			- var args = Array.prototype.slice.call(arguments);
 			for item in args[1]
 				li(role="presentation")
-					a(role="menuitem",tabindex="-1",href="#{item.url}")= item.text
+					a(role="menuitem",tabindex="-1",href=item.url)= item.text
