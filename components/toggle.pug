@@ -1,6 +1,6 @@
 //- toggle
 mixin toggle(type,text)
-	button.btn(class="btn-#{type}",type="button",data-toggle="button",aria-pressed="false",autocomplete="off")
+	button.btn(class="btn-" + type,type="button",data-toggle="button",aria-pressed="false",autocomplete="off")
 		= text
 
 //- toggle-primary
@@ -35,12 +35,12 @@ mixin toggle-danger(text)
 mixin checkbox-toggle(type,items,active)
 	.btn-group(data-toggle="buttons")
 		each item,index in items
-			if(index === active)
-				label.btn.active(class="btn-#{type}")
+			if index === active 
+				label.btn.active(class="btn-" + type)
 					input(type="checkbox",autocomplete="off",checked) 
 					|  #{item.caption}
 			else
-				label.btn(class="btn-#{type}")
+				label.btn(class="btn-" + type)
 					input(type="checkbox",autocomplete="off") 
 					|  #{item.caption}
 
@@ -74,12 +74,12 @@ mixin radio-toggle(type,name,items,active)
 	.btn-group(data-toggle="buttons")
 		each item,index in items
 			if(index === active)
-				label.btn.active(class="btn-#{type}")
-					input(type="radio",name="#{name}",autocomplete="off",checked) 
+				label.btn.active(class="btn-" + type)
+					input(type="radio",name=name,autocomplete="off",checked) 
 					|  #{item.caption}
 			else
-				label.btn(class="btn-#{type}")
-					input(type="radio",name="#{name}",autocomplete="off") 
+				label.btn(class="btn-" + type)
+					input(type="radio",name=name,autocomplete="off") 
 					|  #{item.caption}
 
 //- radio-toggle-primary
