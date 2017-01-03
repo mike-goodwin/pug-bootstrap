@@ -17,16 +17,18 @@ mixin navbar(name, id, style, href)
 			ul.nav.navbar-nav
 				block
 
-mixin nav_item(href, active)
+mixin nav_item(href, style, active)
+	- var ddstyle = style || ''
+	- if(!!active && ddstyle.indexOf("active") == -1) ddstyle += (ddstyle.length == 0 ? "active" : " active")
 
-	if(active)
-		li(class="active"): a( href=href ): block
-	else
-		li: a( href=href ): block
+	li(class=ddstyle): a( href=href ): block
 
-mixin nav_item_dropdown(href, active)
-	- var ddclass = active ? ["dropdown", "active"] : "dropdown"
-	li(class=ddclass)
+mixin nav_item_dropdown(href, style, active)
+	- var ddstyle = style || ''
+	- if(ddstyle.indexOf("dropdown") == -1) ddstyle = (ddstyle.length == 0 ? "dropdown" : "dropdown " + ddstyle)
+	- if(!!active && ddstyle.indexOf("active") == -1) ddstyle += " active"
+
+	li(class=ddstyle)
 		a.dropdown-toggle( href=href, data-toggle="dropdown", role="button", aria-expanded="false" )= attributes.label
 			span.caret
 		ul.dropdown-menu( role="menu" )

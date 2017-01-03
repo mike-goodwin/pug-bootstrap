@@ -41,13 +41,39 @@ describe("Navbars", function () {
         var fn = jade.compileFile(path.join(__dirname, "fixtures/navbars", "navbar-item.pug"));
         assert.equal('<li><a href="href">Test</a></li>', fn(locals));
     });
+    it('should generate a navbar item', function () {
+        var locals = {
+            href: 'href',
+            style: 'style'
+        };
+        var fn = jade.compileFile(path.join(__dirname, "fixtures/navbars", "navbar-item.pug"));
+        assert.equal('<li class="style"><a href="href">Test</a></li>', fn(locals));
+    });
     it('should generate an active navbar item', function () {
         var locals = {
             href: 'href',
+            style: 'style',
             active: true
         };
         var fn = jade.compileFile(path.join(__dirname, "fixtures/navbars", "navbar-item.pug"));
-        assert.equal('<li class="active"><a href="href">Test</a></li>', fn(locals));
+        assert.equal('<li class="style active"><a href="href">Test</a></li>', fn(locals));
+    });
+    it('should generate an active navbar item', function () {
+        var locals = {
+            href: 'href',
+            style: 'style active',
+            active: true
+        };
+        var fn = jade.compileFile(path.join(__dirname, "fixtures/navbars", "navbar-item.pug"));
+        assert.equal('<li class="style active"><a href="href">Test</a></li>', fn(locals));
+    });
+    it('should generate an active navbar item', function () {
+        var locals = {
+            href: 'href',
+            style: 'style active'
+        };
+        var fn = jade.compileFile(path.join(__dirname, "fixtures/navbars", "navbar-item.pug"));
+        assert.equal('<li class="style active"><a href="href">Test</a></li>', fn(locals));
     });
     it('should generate a navbar divider', function () {
         var locals = {};
@@ -61,13 +87,56 @@ describe("Navbars", function () {
         var fn = jade.compileFile(path.join(__dirname, "fixtures/navbars", "nav-item-dropdown.pug"));
         assert.equal('<li class="dropdown"><a class="dropdown-toggle" href="href" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a><ul class="dropdown-menu" role="menu"></ul></li>', fn(locals));
     });
+    it('should generate a navbar dropdown', function () {
+        var locals = {
+            href: 'href',
+            style: 'style'
+        };
+        var fn = jade.compileFile(path.join(__dirname, "fixtures/navbars", "nav-item-dropdown.pug"));
+        assert.equal('<li class="dropdown style"><a class="dropdown-toggle" href="href" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a><ul class="dropdown-menu" role="menu"></ul></li>', fn(locals));
+    });
     it('should generate an active navbar dropdown', function () {
         var locals = {
             href: 'href',
+            style: 'style',
             active: true
         };
         var fn = jade.compileFile(path.join(__dirname, "fixtures/navbars", "nav-item-dropdown.pug"));
-        assert.equal('<li class="dropdown active"><a class="dropdown-toggle" href="href" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a><ul class="dropdown-menu" role="menu"></ul></li>', fn(locals));
+        assert.equal('<li class="dropdown style active"><a class="dropdown-toggle" href="href" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a><ul class="dropdown-menu" role="menu"></ul></li>', fn(locals));
+    });
+    it('should generate an active navbar dropdown', function () {
+        var locals = {
+            href: 'href',
+            style: 'style active',
+            active: true
+        };
+        var fn = jade.compileFile(path.join(__dirname, "fixtures/navbars", "nav-item-dropdown.pug"));
+        assert.equal('<li class="dropdown style active"><a class="dropdown-toggle" href="href" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a><ul class="dropdown-menu" role="menu"></ul></li>', fn(locals));
+    });
+    it('should generate an active navbar dropdown', function () {
+        var locals = {
+            href: 'href',
+            style: 'style active'
+        };
+        var fn = jade.compileFile(path.join(__dirname, "fixtures/navbars", "nav-item-dropdown.pug"));
+        assert.equal('<li class="dropdown style active"><a class="dropdown-toggle" href="href" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a><ul class="dropdown-menu" role="menu"></ul></li>', fn(locals));
+    });
+    it('should generate an active navbar dropdown', function () {
+        var locals = {
+            href: 'href',
+            style: 'dropdown style active',
+            active: true
+        };
+        var fn = jade.compileFile(path.join(__dirname, "fixtures/navbars", "nav-item-dropdown.pug"));
+        assert.equal('<li class="dropdown style active"><a class="dropdown-toggle" href="href" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a><ul class="dropdown-menu" role="menu"></ul></li>', fn(locals));
+    });
+    it('should generate an active navbar dropdown', function () {
+        var locals = {
+            href: 'href',
+            style: 'dropdown style active'
+        };
+        var fn = jade.compileFile(path.join(__dirname, "fixtures/navbars", "nav-item-dropdown.pug"));
+        assert.equal('<li class="dropdown style active"><a class="dropdown-toggle" href="href" data-toggle="dropdown" role="button" aria-expanded="false"><span class="caret"></span></a><ul class="dropdown-menu" role="menu"></ul></li>', fn(locals));
     });
     it('should generate a navbar header', function () {
         var locals = {};
