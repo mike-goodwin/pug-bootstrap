@@ -1,6 +1,6 @@
 {
   "name": "pug-bootstrap",
-  "version": "0.0.10",
+  "version": "0.0.11",
   "description": "Bootstrap framework written completely using mixins in pug",
   "main": "bootstrap.pug",
   "scripts": {
@@ -23,7 +23,8 @@
   "author": "Mike Goodwin",
   "contributors": [
     "https://github.com/techjeffharris",
-    "https://github.com/Nakira"
+    "https://github.com/Nakira",
+    "https://github.com/thylux"
   ],
   "license": "MIT",
   "bugs": {
