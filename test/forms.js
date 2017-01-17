@@ -13,6 +13,16 @@ describe("Forms", function() {
         assert.equal('<input class="form-control" type="text" id="txtInput" placeholder="Placeholder"/>',fn({type: "text", id: "txtInput",placeholder:"Placeholder"}));
     });
 
+    it("should generate text area control", function() {
+        var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","textarea.pug"));
+        assert.equal('<div class="form-group"><label for="txtInput">Label</label><textarea class="form-control" id="txtInput" placeholder="Placeholder" name="txtInput" rows="3"></textarea></div>',fn({ id: "txtInput",placeholder:"Placeholder",label:"Label",name:"txtInput"}));
+    });
+
+    it("should generate simple text area control", function() {
+        var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","textarea-simple.pug"));
+        assert.equal('<textarea class="form-control" id="txtInput" placeholder="Placeholder" rows="3"></textarea>',fn({id: "txtInput",placeholder:"Placeholder"}));
+    });
+
     it("should generate a checkbox",function() {
         var fn = pug.compileFile(path.join(__dirname, "fixtures/forms", "checkbox.pug"));
 
