@@ -19,7 +19,7 @@ mixin textarea(id,placeholder,label,name,rows)
 //- Simple form input control without a form-group
 mixin textarea-simple(id,placeholder,rows)
     - rows = rows || 3 //- Default of 3 rows
-    textarea.form-control(id=id,placeholder=placeholder,rows=rows)
+    textarea.form-control(id=id,placeholder=placeholder,name=id,rows=rows)
 
 //- Checkbox - Block style
 mixin checkbox(text,name,id)
