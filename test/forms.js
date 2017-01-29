@@ -10,7 +10,7 @@ describe("Forms", function() {
 
     it("should generate simple input control", function() {
         var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","input-simple.pug"));
-        assert.equal('<input class="form-control" type="text" id="txtInput" placeholder="Placeholder"/>',fn({type: "text", id: "txtInput",placeholder:"Placeholder"}));
+        assert.equal('<input class="form-control" type="text" id="txtInput" placeholder="Placeholder" name="txtInput"/>',fn({type: "text", id: "txtInput",placeholder:"Placeholder"}));
     });
 
     it("should generate text area control", function() {
