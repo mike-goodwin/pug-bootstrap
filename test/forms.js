@@ -10,7 +10,7 @@ describe("Forms", function() {
 
     it("should generate simple input control", function() {
         var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","input-simple.pug"));
-        assert.equal('<input class="form-control" type="text" id="txtInput" placeholder="Placeholder" name="txtInput"/>',fn({type: "text", id: "txtInput",placeholder:"Placeholder"}));
+        assert.equal('<input class="form-control" type="text" id="txtInput" placeholder="Placeholder"/>',fn({type: "text", id: "txtInput",placeholder:"Placeholder"}));
     });
 
     it("should generate text area control", function() {
@@ -20,7 +20,7 @@ describe("Forms", function() {
 
     it("should generate simple text area control", function() {
         var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","textarea-simple.pug"));
-        assert.equal('<textarea class="form-control" id="txtInput" placeholder="Placeholder" name="txtInput" rows="3"></textarea>',fn({id: "txtInput",placeholder:"Placeholder"}));
+        assert.equal('<textarea class="form-control" id="txtInput" placeholder="Placeholder" rows="3"></textarea>',fn({id: "txtInput",placeholder:"Placeholder"}));
     });
 
     it("should generate a checkbox",function() {
