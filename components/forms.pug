@@ -21,9 +21,8 @@ mixin textarea-simple(id,options)
     textarea.form-control(id=id,
                             placeholder=options.placeholder || false, 
                             name=options.name || false,
-                            value=options.value || false,
                             rows=options.rows || 3,
-                            required=options.required ? 'true' : false)
+                            required=options.required ? 'true' : false) #{options.value || ''}
 
 //- Input control with form-group wrapper
 mixin textarea(id,label,options)
