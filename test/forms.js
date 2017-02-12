@@ -13,6 +13,11 @@ describe("Forms", function() {
         assert.equal('<input class="form-control" type="text" id="txtInput" placeholder="Placeholder"/>',fn({type: "text", id: "txtInput",placeholder:"Placeholder"}));
     });
 
+    it("should generate simple required input control", function() {
+        var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","input-simple.pug"));
+        assert.equal('<input class="form-control" type="text" id="txtInput" placeholder="Placeholder" required="true"/>',fn({type: "text", id: "txtInput",placeholder:"Placeholder",required:true}));
+    });
+
     it("should generate text area control", function() {
         var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","textarea.pug"));
         assert.equal('<fieldset class="form-group"><label for="txtInput">Label</label><textarea class="form-control" id="txtInput" placeholder="Placeholder" name="txtInput" rows="3"></textarea></fieldset>',fn({ id: "txtInput",placeholder:"Placeholder",label:"Label",name:"txtInput"}));
@@ -21,6 +26,11 @@ describe("Forms", function() {
     it("should generate simple text area control", function() {
         var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","textarea-simple.pug"));
         assert.equal('<textarea class="form-control" id="txtInput" placeholder="Placeholder" rows="3"></textarea>',fn({id: "txtInput",placeholder:"Placeholder"}));
+    });
+
+    it("should generate simple required text area control", function() {
+        var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","textarea-simple.pug"));
+        assert.equal('<textarea class="form-control" id="txtInput" placeholder="Placeholder" rows="3" required="true"></textarea>',fn({id: "txtInput",placeholder:"Placeholder",required:true}));
     });
 
     it("should generate a checkbox",function() {
