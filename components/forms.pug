@@ -1,25 +1,34 @@
 include icons
-//- Input control with form-group wrapper
-mixin input(type,id,placeholder,label,name)
-    .form-group
-        label(for=id) #{label}
-        input.form-control(type=type,id=id,placeholder=placeholder,name=name)
 
 //- Simple form input control without a form-group
-mixin input-simple(type,id,placeholder)
-    input.form-control(type=type,id=id,placeholder=placeholder,name=id)
+mixin input-simple(type,id,options)
+    - options = options || {};
+    input.form-control(type=type, id=id,
+                            placeholder=options.placeholder || false, 
+                            name=options.name || false,
+                            value=options.value || false,
+                            required=options.required ? 'true' : false)
 
 //- Input control with form-group wrapper
-mixin textarea(id,placeholder,label,name,rows)
-    - rows = rows || 3 //- Default of 3 rows
-    .form-group
+mixin input(type,id,label,options)
+    fieldset.form-group
         label(for=id) #{label}
-        textarea.form-control(id=id,placeholder=placeholder,name=name,rows=rows)
+        +input-simple(type,id,options)
 
 //- Simple form input control without a form-group
-mixin textarea-simple(id,placeholder,rows)
-    - rows = rows || 3 //- Default of 3 rows
-    textarea.form-control(id=id,placeholder=placeholder,name=id,rows=rows)
+mixin textarea-simple(id,options)
+    - options = options || {};
+    textarea.form-control(id=id,
+                            placeholder=options.placeholder || false, 
+                            name=options.name || false,
+                            rows=options.rows || 3,
+                            required=options.required ? 'true' : false) #{options.value || ''}
+
+//- Input control with form-group wrapper
+mixin textarea(id,label,options)
+    fieldset.form-group
+        label(for=id) #{label}
+        +textarea-simple(id,options)
 
 //- Checkbox - Block style
 mixin checkbox(text,name,id)
@@ -49,12 +58,12 @@ mixin radio-inline(text,name,id)
 
 //- Submit button
 mixin submit(text,name,id)
-    .form-group
+    fieldset.form-group
         button.btn.btn-default(type="submit",name=name,id=id)= text
 
 //- Input group - both prepend and append options available, and block is passed
 mixin input-group(prepend,append)
-    .form-group
+    fieldset.form-group
         .input-group
             unless !prepend
                 .input-group-addon

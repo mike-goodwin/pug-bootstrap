@@ -5,22 +5,37 @@ var path = require("path");
 describe("Forms", function() {
     it("should generate input control", function() {
         var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","input.pug"));
-        assert.equal('<div class="form-group"><label for="txtInput">Label</label><input class="form-control" type="text" id="txtInput" placeholder="Placeholder" name="txtInput"/></div>',fn({ type:"text",id: "txtInput",placeholder:"Placeholder",label:"Label",name:"txtInput"}));
+        assert.equal('<fieldset class="form-group"><label for="txtInput">Label</label><input class="form-control" type="text" id="txtInput" placeholder="Placeholder" name="txtInput"/></fieldset>',fn({ type:"text",id: "txtInput",placeholder:"Placeholder",label:"Label",name:"txtInput"}));
     });
 
     it("should generate simple input control", function() {
         var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","input-simple.pug"));
-        assert.equal('<input class="form-control" type="text" id="txtInput" placeholder="Placeholder" name="txtInput"/>',fn({type: "text", id: "txtInput",placeholder:"Placeholder"}));
+        assert.equal('<input class="form-control" type="text" id="txtInput" placeholder="Placeholder"/>',fn({type: "text", id: "txtInput",placeholder:"Placeholder"}));
+    });
+
+    it("should generate simple required input control", function() {
+        var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","input-simple.pug"));
+        assert.equal('<input class="form-control" type="text" id="txtInput" placeholder="Placeholder" required="true"/>',fn({type: "text", id: "txtInput",placeholder:"Placeholder",required:true}));
     });
 
     it("should generate text area control", function() {
         var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","textarea.pug"));
-        assert.equal('<div class="form-group"><label for="txtInput">Label</label><textarea class="form-control" id="txtInput" placeholder="Placeholder" name="txtInput" rows="3"></textarea></div>',fn({ id: "txtInput",placeholder:"Placeholder",label:"Label",name:"txtInput"}));
+        assert.equal('<fieldset class="form-group"><label for="txtInput">Label</label><textarea class="form-control" id="txtInput" placeholder="Placeholder" name="txtInput" rows="3"></textarea></fieldset>',fn({ id: "txtInput",placeholder:"Placeholder",label:"Label",name:"txtInput"}));
     });
 
     it("should generate simple text area control", function() {
         var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","textarea-simple.pug"));
-        assert.equal('<textarea class="form-control" id="txtInput" placeholder="Placeholder" name="txtInput" rows="3"></textarea>',fn({id: "txtInput",placeholder:"Placeholder"}));
+        assert.equal('<textarea class="form-control" id="txtInput" placeholder="Placeholder" rows="3"></textarea>',fn({id: "txtInput",placeholder:"Placeholder"}));
+    });
+
+    it("should generate simple text area control with content", function() {
+        var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","textarea-simple.pug"));
+        assert.equal('<textarea class="form-control" id="txtInput" placeholder="Placeholder" rows="3">text</textarea>',fn({id: "txtInput",placeholder:"Placeholder",value:"text"}));
+    });
+
+    it("should generate simple required text area control", function() {
+        var fn = pug.compileFile(path.join(__dirname, "fixtures/forms","textarea-simple.pug"));
+        assert.equal('<textarea class="form-control" id="txtInput" placeholder="Placeholder" rows="3" required="true"></textarea>',fn({id: "txtInput",placeholder:"Placeholder",required:true}));
     });
 
     it("should generate a checkbox",function() {
@@ -46,12 +61,12 @@ describe("Forms", function() {
 
     it("should generate a submit button",function() {
         var fn = pug.compileFile(path.join(__dirname, "fixtures/forms", "submit.pug"));
-        assert.equal('<div class="form-group"><button class="btn btn-default" type="submit" name="btnSubmit" id="btnSubmit">Submit</button></div>',fn({ text: "Submit", name:"btnSubmit", id:"btnSubmit"}));
+        assert.equal('<fieldset class="form-group"><button class="btn btn-default" type="submit" name="btnSubmit" id="btnSubmit">Submit</button></fieldset>',fn({ text: "Submit", name:"btnSubmit", id:"btnSubmit"}));
     });
 
     it("should generate a input group", function() {
         var fn = pug.compileFile(path.join(__dirname, "fixtures/forms", "input-group.pug"));
-        assert.equal('<div class="form-group"><div class="input-group"><div class="input-group-addon">Prepend</div><input type="text"/><div class="input-group-addon">Append</div></div></div>',fn({prepend: "Prepend", append: "Append"}));
+        assert.equal('<fieldset class="form-group"><div class="input-group"><div class="input-group-addon">Prepend</div><input type="text"/><div class="input-group-addon">Append</div></div></fieldset>',fn({prepend: "Prepend", append: "Append"}));
     });
 
     it("should generate a icon button", function() {
