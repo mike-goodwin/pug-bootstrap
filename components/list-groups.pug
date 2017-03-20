@@ -34,15 +34,17 @@ mixin list-group-item(url,active)
 //-       .toggleClass('glyphicon-chevron-right')
 //-       .toggleClass('glyphicon-chevron-down');
 //- });
-mixin list-group-item-collapsible(url,active)
+mixin list-group-item-collapsible(url,name,active)
 	if(active === "true")
 		a.list-group-item.active(href="#"+url, data-toggle="collapse")
 			i.glyphicon.glyphicon-chevron-down
+			| #{name}
 		.list-group.collapse(id=url)
 			block
 	else
 		a.list-group-item(href="#"+url, data-toggle="collapse")
 			i.glyphicon.glyphicon-chevron-right
+			| #{name}
 		.list-group.collapse(id=url)
 			block
 
