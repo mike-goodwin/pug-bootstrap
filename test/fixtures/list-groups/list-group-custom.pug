@@ -1,16 +1,16 @@
 include ../../../components/list-groups
-+list-group-custom()
++list-group-custom(style)
   +list-group-item("url1","true")
     h4.list-group-item-heading heading1
     p.list-group-item-text
       | text1
 
-  +list-group-item("url2")
+  +list-group-item-collapsible("url2")
     h4.list-group-item-heading heading2
     p.list-group-item-text
       | text2
-
-  +list-group-item("url3")
-    h4.list-group-item-heading heading3
-    p.list-group-item-text
-      | text3
+      
+    +list-group-item("url3")
+      h4.list-group-item-heading heading3
+      p.list-group-item-text
+        | text3
