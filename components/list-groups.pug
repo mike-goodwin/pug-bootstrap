@@ -1,14 +1,18 @@
 //- list-group mixins
-mixin list-group(items,active)
-	ul.list-group
+mixin list-group(items,active,style)
+	- var ddstyle = style || ''
+	- if(ddstyle.indexOf("list-group") == -1) ddstyle += (ddstyle.length == 0 ? "list-group" : " list-group")
+	ul(class=ddstyle)
 		each item, index in items
 			if(index === active)
 				li.list-group-item.active #{item}
 			else
 				li.list-group-item #{item}
 
-mixin list-group-links(items,active)
-	.list-group
+mixin list-group-links(items,active,style)
+	- var ddstyle = style || ''
+	- if(ddstyle.indexOf("list-group") == -1) ddstyle += (ddstyle.length == 0 ? "list-group" : " list-group")
+	div(class=ddstyle)
 		each item, index in items
 			if(index === active)
 				a.list-group-item.active(href=item.url) #{item.text}
@@ -23,6 +27,29 @@ mixin list-group-item(url,active)
 		a.list-group-item(href=url)
 			block
 
-mixin list-group-custom()
-	.list-group
+//- for this control to have  chevron feedback you should
+//- have some kind of event handler like the following
+//- $('.list-group-item').on('click', function() {
+//-     $('.glyphicon', this)
+//-       .toggleClass('glyphicon-chevron-right')
+//-       .toggleClass('glyphicon-chevron-down');
+//- });
+mixin list-group-item-collapsible(url,name,active)
+	if(active === "true")
+		a.list-group-item.active(href="#"+url, data-toggle="collapse")
+			i.glyphicon.glyphicon-chevron-down
+			| #{name}
+		.list-group.collapse(id=url)
+			block
+	else
+		a.list-group-item(href="#"+url, data-toggle="collapse")
+			i.glyphicon.glyphicon-chevron-right
+			| #{name}
+		.list-group.collapse(id=url)
+			block
+
+mixin list-group-custom(style)
+	- var ddstyle = style || ''
+	- if(ddstyle.indexOf("list-group") == -1) ddstyle += (ddstyle.length == 0 ? "list-group" : " list-group")
+	div(class=ddstyle)
 		block
