@@ -1,7 +1,7 @@
 //- table mixins
 mixin table(header,data,type)
 	- var type = type || ""
-	table.table(class="#{type}")
+	table.table(class=type)
 		thead
 			tr
 				each head, i in header
