@@ -1,6 +1,6 @@
 {
   "name": "pug-bootstrap",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "Bootstrap framework written completely using mixins in pug",
   "main": "bootstrap.pug",
   "scripts": {
@@ -25,7 +25,8 @@
     "https://github.com/techjeffharris",
     "https://github.com/Nakira",
     "https://github.com/thylux",
-    "https://github.com/kraftman"
+    "https://github.com/kraftman",
+    "https://github.com/thamys"
   ],
   "license": "MIT",
   "bugs": {
