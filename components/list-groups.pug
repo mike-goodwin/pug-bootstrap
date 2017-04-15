@@ -9,6 +9,16 @@ mixin list-group(items,active,style)
 			else
 				li.list-group-item #{item}
 
+mixin list-group-ordered(items,active,style)
+	- var ddstyle = style || ''
+	- if(ddstyle.indexOf("list-group") == -1) ddstyle += (ddstyle.length == 0 ? "list-group" : " list-group")
+	ol(class=ddstyle)
+		each item, index in items
+			if(index === active)
+				li.list-group-item.active #{item}
+			else
+				li.list-group-item #{item}
+
 mixin list-group-links(items,active,style)
 	- var ddstyle = style || ''
 	- if(ddstyle.indexOf("list-group") == -1) ddstyle += (ddstyle.length == 0 ? "list-group" : " list-group")
