@@ -15,6 +15,22 @@ mixin tab-list(tabs,active,options)
 	.tab-content
 		block
 
+mixin tab-pills-list(tabs,active,options)
+	- options = options || {};
+	- var style = options.style || '';
+	- style = style.replace(/\bnav-tabs\b/, '')
+	- style = style.replace(/\bnav\b/, '')
+	ul.nav.nav-pills(role="tablist", class=style, 
+	   id=options.id || false)
+		each item,index in tabs
+			if (index === active)
+				li.active
+					a(href=`#tab${item}`,role="tab",data-toggle="tab")= item
+			else
+				li
+					a(href=`#tab${item}`,role="tab",data-toggle="tab")= item
+	.tab-content.clearfix
+		block		
 
 //- Tab pane
 mixin tab(id,active,options)
