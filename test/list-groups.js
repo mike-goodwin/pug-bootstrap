@@ -26,6 +26,27 @@ describe('Simple List Group', function () {
         };
         assert.equal(actual, fn(locals));
     });
+
+    it('should render a simple list ordered group', function () {
+        var fn = pug.compileFile(path.join(__dirname, "fixtures/list-groups", 'list-group-ordered.pug'));
+        var actual = '<ol class="list-group"><li class="list-group-item">item1</li><li class="list-group-item active">item2</li><li class="list-group-item">item3</li></ol>';
+        var locals = {
+            items: items,
+            active: 1
+        };
+        assert.equal(actual, fn(locals));
+    });
+
+    it('should render a simple list ordered group with custom style', function () {
+        var fn = pug.compileFile(path.join(__dirname, "fixtures/list-groups", 'list-group-ordered.pug'));
+        var actual = '<ol class="well list-group"><li class="list-group-item">item1</li><li class="list-group-item active">item2</li><li class="list-group-item">item3</li></ol>';
+        var locals = {
+            items: items,
+            active: 1,
+            style: "well"
+        };
+        assert.equal(actual, fn(locals));
+    });
 });
 
 describe('Link List Group', function () {
