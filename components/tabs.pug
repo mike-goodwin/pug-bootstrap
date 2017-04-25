@@ -36,7 +36,7 @@ mixin tab-pills-list(tabs,active,options)
 mixin tab(id,active,options)
 	- options = options || {};
 	- var style = options.style || '';
-	- style = style.replace(/\bnav-pane\b/, '')
+	- style = style.replace(/\btab-pane\b/, '')
 	- if(active && style.indexOf("active") == -1) style += (style.length == 0 ? "active" : " active")
-	.nav-pane(id=`tab${id}`, class=style)
+	.tab-pane(id=`tab${id}`, class=style)
 		block
