@@ -7,7 +7,8 @@ mixin input-simple(type,id,options)
                             placeholder=options.placeholder || false, 
                             name=options.name || false,
                             value=options.value || false,
-                            required=options.required ? 'true' : false)
+                            required=options.required ? 'true' : false,
+                            readonly=options.readonly ? 'true' : false)
 
 //- Input control with form-group wrapper
 mixin input(type,id,label,options)
@@ -22,6 +23,7 @@ mixin textarea-simple(id,options)
                             placeholder=options.placeholder || false, 
                             name=options.name || false,
                             rows=options.rows || 3,
+                            readonly=options.readonly ? 'true' : false
                             required=options.required ? 'true' : false) #{options.value || ''}
 
 //- Input control with form-group wrapper
