@@ -4,7 +4,9 @@
   "description": "Bootstrap framework written completely using mixins in pug",
   "main": "bootstrap.pug",
   "scripts": {
-    "test": "mocha -R spec"
+    "test": "mocha -R spec",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,8 @@
     "mocha": "^2.3.4"
   },
   "dependencies": {
-    "pug": "2.0.3"
-  }
+    "pug": "2.0.3",
+    "snyk": "^1.319.1"
+  },
+  "snyk": true
 }
